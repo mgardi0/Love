@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ئەوین گیان</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* تکایە لێرەدا بەستەری فۆنتەکەی گێت هەب دابنێ (Raw link) */
+        @font-face {
+            font-family: 'NRT';
+            src: url('YOUR_GITHUB_RAW_LINK_HERE/NRT-Reg.ttf') format('truetype');
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+
+        .kurdish-font { 
+            font-family: 'NRT', sans-serif; 
+        }
+
+        .serif { 
+            font-family: 'Playfair Display', serif; 
+        }
+
+        /* Gradient Animation */
+        @keyframes gradient-bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .fluid-gradient {
+            background: linear-gradient(-45deg, #fbcfe8, #be123c, #7e22ce, #db2777);
+            background-size: 400% 400%;
+            animation: gradient-bg 15s ease infinite;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.3; }
+            80% { opacity: 0.3; }
+            100% { transform: translateY(-1000px) rotate(360deg); opacity: 0; }
+        }
+
+        .heart-particle {
+            position: absolute;
+            color: #fbcfe8;
+            animation: float linear infinite;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        /* Reveal Animation on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Custom selection color */
+        ::selection {
+            background-color: #fbcfe8;
+            color: #be123c;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <audio id="bg-music" src="YOUR_GITHUB_RAW_LINK_HERE/m_gardi0-٢٠٢٦٠٣١٩-0001.mp3" loop></audio>
+
+    <div id="hearts-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 px-6 py-4 flex justify-between items-center bg-transparent" dir="ltr">
+        <div class="kurdish-font text-2xl font-bold text-white drop-shadow-sm ml-4">ئەوین</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium text-white/90 mr-4">
+            <a href="#story" class="hover:text-white transition-colors ml-8">Our Story</a>
+            <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
+        </div>
+        <button class="md:hidden text-white mr-4"><i class="fa-solid fa-heart"></i></button>
+    </nav>
+
+    <section class="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden fluid-gradient">
+        <div class="z-10 text-white" dir="ltr">
+            <i class="fa-solid fa-heart text-4xl text-white/80 mb-6 animate-pulse"></i>
+            <h1 class="kurdish-font text-6xl md:text-8xl mb-8 leading-tight drop-shadow-lg" dir="rtl">
+                ئەوین گیان خۆشمەوێی
+            </h1>
+            <div class="flex flex-col items-center gap-4">
+                <div class="h-[1px] w-24 bg-white/40"></div>
+                <p class="serif text-xl md:text-2xl font-light tracking-wide italic">Forever & Always</p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/60 animate-bounce cursor-pointer">
+            <i class="fa-solid fa-chevron-down text-3xl"></i>
+        </div>
+    </section>
+
+    <section id="story" class="py-24 px-6 bg-white relative">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <i class="fa-solid fa-heart text-3xl text-rose-200 mb-8"></i>
+            <h2 class="serif text-4xl md:text-5xl mb-12 text-slate-900" dir="ltr">Where it all began...</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 text-left items-center" dir="ltr">
+                <div class="aspect-[4/5] bg-rose-50 rounded-2xl overflow-hidden shadow-2xl relative group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-rose-900/40 to-transparent z-10"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" 
+                        alt="Couple walking" 
+                        class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-700"
+                    />
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed text-slate-600 first-letter:text-5xl first-letter:serif first-letter:float-left first-letter:mr-3 first-letter:text-rose-500">
+                        It started with a shared coffee in a quiet library corner. Three years later, we find ourselves preparing to walk down an aisle of wildflowers in a coastal Italian town. Our journey has been a tapestry of quiet moments and grand adventures.
+                    </p>
+                    <p class="text-lg leading-relaxed text-slate-600">
+                        From long city walks to the midnight sunsets of summer, every chapter has brought us closer to this very moment. We can't wait to share our love with the people who matter most.
+                    </p>
+                    <div class="pt-4 kurdish-font text-xl text-rose-400 text-right" dir="rtl">— بە خۆشەویستییەوە</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-6xl mx-auto reveal">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6" dir="ltr">
+                <div class="text-left">
+                    <h2 class="serif text-5xl mb-4">The Gallery</h2>
+                    <p class="text-slate-500 tracking-wide uppercase text-sm">Snapshots of our favorite memories</p>
+                </div>
+                <div class="flex gap-4">
+                    <button class="w-12 h-12 border border-slate-200 rounded-full hover:bg-rose-50 transition-colors flex items-center justify-center"><i class="fa-solid fa-camera"></i></button>
+                    <button class="w-12 h-12 border border-slate-200 rounded-full hover:bg-rose-50 transition-colors flex items-center justify-center"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500">
+                    <img src="https://images.unsplash.com/photo-1522673607200-16488354495f?auto=format&fit=crop&q=80&w=800" alt="Memory 1" class="w-full h-auto" />
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 scale-[0.95]">
+                    <img src="https://images.unsplash.com/photo-1460978812857-470ed1c75af7?auto=format&fit=crop&q=80&w=800" alt="Memory 2" class="w-full h-auto" />
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 translate-y-4">
+                    <img src="https://images.unsplash.com/photo-1518049360731-32823ff30ecf?auto=format&fit=crop&q=80&w=800" alt="Memory 3" class="w-full h-auto" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="music-btn" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-rose-600 text-white rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center cursor-pointer">
+        <i id="music-icon" class="fa-solid fa-play ml-1 text-xl"></i>
+    </button>
+
+    <footer class="py-12 text-center text-slate-400 bg-slate-900 px-6">
+        <div class="kurdish-font text-3xl text-white mb-6">ئەوین</div>
+        <p class="text-xs uppercase tracking-[0.2em] font-light" dir="ltr">With all our love, forever and always.</p>
+        <p class="mt-8 text-[10px] opacity-30" dir="ltr">© 2026 DESIGNED WITH LOVE</p>
+    </footer>
+
+    <script>
+        // 1. Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-4');
+            } else {
+                navbar.classList.remove('glass', 'py-3');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // 2. Reveal Animations on Scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 150;
+
+            revealElements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger once on load
+
+        // 3. Music Toggle Functionality
+        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
+        const audio = document.getElementById('bg-music');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-play', 'ml-1');
+            } else {
+                audio.play();
+                musicIcon.classList.remove('fa-play', 'ml-1');
+                musicIcon.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // 4. Generate Floating Hearts
+        const heartsContainer = document.getElementById('hearts-container');
+        const heartCount = 15;
+
+        for (let i = 0; i < heartCount; i++) {
+            const heart = document.createElement('i');
+            heart.classList.add('fa-solid', 'fa-heart', 'heart-particle');
+            
+            // Random properties
+            const size = Math.floor(Math.random() * 24) + 16;
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            const animDelay = Math.random() * 5;
+            const animDuration = Math.random() * 15 + 10;
+
+            heart.style.fontSize = `${size}px`;
+            heart.style.left = `${left}%`;
+            heart.style.top = `${top}%`;
+            heart.style.animationDelay = `${animDelay}s`;
+            heart.style.animationDuration = `${animDuration}s`;
+
+            heartsContainer.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
